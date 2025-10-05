@@ -1,16 +1,1 @@
-name: Ingest news every 15 min
-on:
-  schedule:
-    - cron: "*/15 * * * *"
-  workflow_dispatch:
-jobs:
-  ping:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - name: Call ingest endpoint
-        env:
-          INGEST_URL: ${{ secrets.INGEST_URL }}
-        run: |
-          echo "Calling $INGEST_URL"
-          curl -fsS "$INGEST_URL"
+
